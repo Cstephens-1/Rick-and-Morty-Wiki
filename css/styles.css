@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(199, 196, 191);
+}
+
+#header-container{
+    background-color: turquoise;
+}
+
+.submit{
+    border-radius: 8px;
+    background-color: tomato;
+}
+
+.char-card{
+    background-color: lightblue;
+}

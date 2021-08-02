@@ -6,50 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SightSeeker</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer type="text/javascript" src="index.js"></script>
+    <script defer src="https://gist.github.com/nj10deadend/8d5d8ec9d1a1c0d27e4a90f6c6323880.js"></script>
+
 </head>
 
 
 
 <body>
     <div id="header-container">
-        <h2>SightSeeker</h2>
-        <form action="submit">
-            <input type="text" placeholder="Enter Name of Sight">
-            <input type="text" placeholder="Enter City and State of Sight">
+        <h2>SomeName</h2>
+        <!-- <form action="submit">
+            <input type="text" placeholder="Enter New Comment">
             <button class="submit">Submit</button>
-        </form>
+        </form> -->
     </div>
 
     <hr>
 
     <h3>Sights
-        <div id="states-container">
-            <ul id="states">
-                <li class="state">Alabama
-                    <ul>
-                        <li class="city">City
-                            <ul>
-                                <li>Sight: NASA</li>
-                                <li>Sight: Orange Beach</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
-                <br>
-
-                <li class="state">Alaska
-                    <ul>
-                        <li class="city">City 
-                            <ul>
-                                <li>Sight: Northern Lights</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- etc -->
-            </ul>
+        <!-- container for 10 items, one for each character -->
+        <div id="char-container">
+            <!-- card container -->
+            <div class= "char-card">
+                <!-- //individual character -->
+                <div class="character"></div>
+            </div>
+            
+            
         </div>
     </h3>
 

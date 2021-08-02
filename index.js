@@ -20,7 +20,6 @@ function someFunction(data){
 
         //add event listener to the submit button that appends the users text to the character card.
         newForm.addEventListener("submit", (event) =>{
-            
             event.preventDefault();
             //append the users text to a new paragraph element to the card.
             cardAppender(event)

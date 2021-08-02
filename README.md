@@ -1,1 +1,1 @@
-# SightSeeker
+How to use the app

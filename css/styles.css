@@ -12,5 +12,14 @@ body{
 }
 
 .char-card{
-    background-color: lightblue;
+    background-color: yellow;
+    width: 25%;
+    text-align: center;
+    box-shadow: 5px 5px lime;
 }
+
+#char-container{
+    width: 100%
+}
+
+.comment-form

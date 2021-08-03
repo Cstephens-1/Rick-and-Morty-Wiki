@@ -7,16 +7,17 @@ fetch("https://rickandmortyapi.com/api/character")
 
 
 function someFunction(data){
-    const shortCharArray = data.results.splice(0, 9)
+    const shortCharArray = data.results
+    // 
     shortCharArray.forEach(element => {
 
     //create an input field for a new comment with id pf comment-form
         const newForm = document.createElement("form")
-        newForm.id = "comment-form"
+        newForm.id = "comment-form" 
         
         //create a new button for submitting a comment
         const formBtn = document.createElement("button")
-        formBtn.innerText = "Submit"
+        formBtn.innerText = " Submit"
 
         //add event listener to the submit button that appends the users text to the character card.
         newForm.addEventListener("submit", (event) =>{
@@ -35,7 +36,7 @@ function someFunction(data){
 
         
 
-        newForm.append(comment,formBtn)
+        newForm.append(comment, " ",formBtn)
 
 
         const charContainer = document.querySelector("#char-container")

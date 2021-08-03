@@ -16,10 +16,14 @@ body{
     width: 25%;
     text-align: center;
     box-shadow: 5px 5px lime;
+    border-radius: 5px;
+    visibility: visible;
 }
 
 #char-container{
-    width: 100%
+    width: 100%;
 }
 
-.comment-form
+.commentForm{
+    border-radius: 8px;
+}

@@ -1,17 +1,43 @@
+
 fetch("https://rickandmortyapi.com/api/character")
 .then(resp=> resp.json())
-.then(data=> someFunction(data))
+.then(chars=> {
+    renderChars(chars)
+    filterChars(chars)
+})
+    
+
+// const submitForm = document.querySelector("#submitForm")
+// submitForm.addEventListener("submit", (e)=>{
+//     e.preventDefault()
+//     filterChars(chars)
+    
+    
+    
+    
+// })
+
+function filterChars(chars){
+    let speciesOptions = document.querySelector(".speciesName")
+    let genderOptions = document.querySelector(".genderName")
+    let statusOptions = document.querySelector(".statusName")
+
+    let charArray = chars.results
+    const result = charArray.filter(character => character.species === `${speciesOptions.value}`)
+    // && character.status === `${statusOptions.value}` && character.gender=== `${genderOptions}`)
+    console.log(result)
+    
+    }
+
     
 
 
 
-
-function someFunction(data){
-    const shortCharArray = data.results
-    // 
+function renderChars(chars){
+    const shortCharArray = chars.results
     shortCharArray.forEach(element => {
 
-    //create an input field for a new comment with id pf comment-form
+    //create an input field for a new comment with id of comment-form
         const newForm = document.createElement("form")
         newForm.id = "comment-form" 
         
@@ -24,8 +50,6 @@ function someFunction(data){
             event.preventDefault();
             //append the users text to a new paragraph element to the card.
             cardAppender(event)
-            // card.append(newP)
-            console.log(event.target)
         })
         
         
@@ -34,11 +58,9 @@ function someFunction(data){
         comment.className = "commentForm"
         comment.placeholder = "Enter comment"
 
-        
-
         newForm.append(comment, " ",formBtn)
 
-
+        //create an individual card for each character
         const charContainer = document.querySelector("#char-container")
         const card = document.createElement("div")
         card.className="char-card";
@@ -66,8 +88,6 @@ function someFunction(data){
             card.append(newP)
         }
     });
-    // forEach item in shortCharArray = card render name, status, gender, comments, create image with char's id
-
-    
 }
+
 

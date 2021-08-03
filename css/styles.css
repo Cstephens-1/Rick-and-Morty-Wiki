@@ -20,6 +20,10 @@ body{
     visibility: visible;
 }
 
+.location{
+    visibility: hidden;
+}
+
 #char-container{
     width: 100%;
 }

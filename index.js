@@ -7,10 +7,7 @@ fetch("https://rickandmortyapi.com/api/character")
 })
     
 
-// const submitForm = document.querySelector("#submitForm")
-// submitForm.addEventListener("submit", (e)=>{
-//     e.preventDefault()
-//     filterChars(chars)
+// 
     
     
     
@@ -18,16 +15,23 @@ fetch("https://rickandmortyapi.com/api/character")
 // })
 
 function filterChars(chars){
-    let speciesOptions = document.querySelector(".speciesName")
-    let genderOptions = document.querySelector(".genderName")
-    let statusOptions = document.querySelector(".statusName")
+
+    const submitForm = document.querySelector("#submitForm")
+    submitForm.addEventListener("submit", (e)=>{
+        e.preventDefault()
+//     
+    let speciesOptions = document.querySelector(".speciesName").value
+    let firstLetterSpecies = speciesOptions.charAt(0).toUpperCase() + speciesOptions.slice(1)
+    let genderOptions = document.querySelector(".genderName").value
+    let firstLetterGender = genderOptions.charAt(0).toUpperCase() + genderOptions.slice(1)
+    let statusOptions = document.querySelector(".statusName").value
+    let firstLetterStatus = statusOptions.charAt(0).toUpperCase() + statusOptions.slice(1)
 
     let charArray = chars.results
-    const result = charArray.filter(character => character.species === `${speciesOptions.value}`)
-    // && character.status === `${statusOptions.value}` && character.gender=== `${genderOptions}`)
+    const result = charArray.filter(character => character.species === `${firstLetterSpecies}` && character.gender === `${firstLetterGender}` && character.status === `${statusOptions}`)
     console.log(result)
-    
-    }
+})
+}
 
     
 
@@ -64,6 +68,7 @@ function renderChars(chars){
         const charContainer = document.querySelector("#char-container")
         const card = document.createElement("div")
         card.className="char-card";
+        card.id= element.id
 
         const name = document.createElement("h2")
         name.textContent= element.name
@@ -77,8 +82,13 @@ function renderChars(chars){
         const status = document.createElement("p")
         status.textContent = `Status: ${element.status}`
 
-        card.append(name, species, gender, status, newForm)
+        const location= document.createElement("p")
+        location.className="location"
+        location.textContent = element.location.name
+
+        card.append(name, species, gender, status, location, newForm)
         charContainer.appendChild(card)
+        console.log(chars)
 
 
     //function to append a new comment to the card.
@@ -87,7 +97,17 @@ function renderChars(chars){
             newP.textContent = comment.value
             card.append(newP)
         }
-    });
+
+        function changeVisibility(){
+
+    
+            card.addEventListener("click", ()=>{
+                location.style.visibility= "visible"
+            })
+        }
+        changeVisibility()  
+           
+})
 }
 
 

@@ -1,6 +1,18 @@
-body{
+/* body{
     background-color: rgb(199, 196, 191);
+} */
+
+body{
+    background-image: url('https://media2.giphy.com/media/3oEduFLBvCOl3jga5i/giphy.gif?cid=6c09b95261d4815d4b1cef4c52918ed222510f0230ebe3a9&rid=giphy.gif&ct=g');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
 }
+
 
 #header-container{
     background-color: turquoise;
@@ -12,16 +24,20 @@ body{
 }
 
 .char-card{
-    background-color: yellow;
-    width: 25%;
+    /* background-color: yellow; */
+    background-color: rgb(0, 140, 255);
+    /* width: 100%; */
     text-align: center;
     box-shadow: 5px 5px lime;
     border-radius: 5px;
     visibility: visible;
+    margin: auto;
+    position: relative;
+    
 }
 
 #char-container{
-    width: 100%;
+    width: 25%;
 }
 
 .commentForm{

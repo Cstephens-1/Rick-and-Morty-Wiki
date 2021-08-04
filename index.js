@@ -3,7 +3,7 @@ fetch("https://rickandmortyapi.com/api/character")
 .then(resp=> resp.json())
 .then(chars=> {
     renderChars(chars)
-    filterChars(chars)
+    // filterChars(chars)
 })
     
 
@@ -17,17 +17,27 @@ fetch("https://rickandmortyapi.com/api/character")
     
 // })
 
-function filterChars(chars){
-    let speciesOptions = document.querySelector(".speciesName")
-    let genderOptions = document.querySelector(".genderName")
-    let statusOptions = document.querySelector(".statusName")
+// function filterChars(chars){
+//     let speciesOptions = document.querySelector(".speciesName")
+//     let genderOptions = document.querySelector(".genderName")
+//     let statusOptions = document.querySelector(".statusName")
+//     const optionSelectors = `${speciesOptions.value} && ${genderOptions.value} && ${statusOptions.value}`
 
-    let charArray = chars.results
-    const result = charArray.filter(character => character.species === `${speciesOptions.value}`)
-    // && character.status === `${statusOptions.value}` && character.gender=== `${genderOptions}`)
-    console.log(result)
     
-    }
+
+//     let charArray = chars.results
+//     const charsSelectors = 
+//     charArray.forEach(element => {
+//         return 
+//     })
+    // const result = charArray.filter(character => console.log(character)); 
+       //character.species === `${speciesOptions.value}`)
+    // // && character.status === `${statusOptions.value}` && character.gender=== `${genderOptions}`)
+    // console.log(result)
+// }
+    
+
+    
 
     
 
@@ -64,6 +74,10 @@ function renderChars(chars){
         const charContainer = document.querySelector("#char-container")
         const card = document.createElement("div")
         card.className="char-card";
+        card.id = `${element.id}`
+
+        const charImage = document.createElement('img')
+        charImage.src = `${element.image}`
 
         const name = document.createElement("h2")
         name.textContent= element.name
@@ -77,8 +91,14 @@ function renderChars(chars){
         const status = document.createElement("p")
         status.textContent = `Status: ${element.status}`
 
-        card.append(name, species, gender, status, newForm)
+        card.append(name, species, gender, status, charImage, newForm)
         charContainer.appendChild(card)
+
+        card.addEventListener("click", (event)=>{
+            console.log(event)
+            
+            charQuoteCardAppender(card);
+        })
 
 
     //function to append a new comment to the card.
@@ -87,7 +107,15 @@ function renderChars(chars){
             newP.textContent = comment.value
             card.append(newP)
         }
+        function charQuoteCardAppender(card){
+            const rickQuote = `"Listen Morty, I hate to break it to you, but what people call “love” is just a chemical reaction that compels animals to breed. It hits hard, Morty, then it slowly fades, leaving you stranded in a failing marriage. I did it. Your parents are gonna do it. Break the cycle, Morty. Rise above. Focus on science."`
+            const quoteCard = document.createElement('div')
+            const liQuote = document.createElement('li')
+            quoteCard.className = "char-card"
+            liQuote.textContent = rickQuote
+            quoteCard.append(liQuote)
+            card.append(quoteCard)
+        }
+        
     });
 }
-
-

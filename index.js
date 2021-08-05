@@ -4,6 +4,18 @@ fetch("https://rickandmortyapi.com/api/character")
         renderChars(chars)
     })
 
+    fetch("https://rickandmortyapi.com/api/character?page=2")
+    .then(resp => resp.json())
+    .then(chars => {
+        renderChars(chars)
+    })
+
+    fetch("https://rickandmortyapi.com/api/character?page=3")
+    .then(resp => resp.json())
+    .then(chars => {
+        renderChars(chars)
+    })
+
 
 
 function renderChars(chars) {

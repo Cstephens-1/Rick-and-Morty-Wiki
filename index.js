@@ -102,8 +102,9 @@ function renderChars(chars) {
                 //change this to clear the html, and create only the cards that come back
                 
                 if (theseAreTheSelectedFilters.length === 0) {
-                    card.innerHTML = ""
+                    card.style.visibility = "hidden"
                 } else {
+                    console.log(theseAreTheSelectedFilters)
                     card.style.visibility = "visible"
                 }
                 console.log(theseAreTheSelectedFilters)

@@ -1,33 +1,76 @@
 body{
-    background-color: rgb(199, 196, 191);
+    background-image: url('https://media2.giphy.com/media/3oEduFLBvCOl3jga5i/giphy.gif?cid=6c09b95261d4815d4b1cef4c52918ed222510f0230ebe3a9&rid=giphy.gif&ct=g');
+    background-size:auto;
+    height: 100vh;
+    padding:0;
+    margin:0;
 }
+
 
 #header-container{
-    background-color: turquoise;
+    background-color: rgb(0, 140, 255);
+    box-shadow: 5px 5px lime;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    border-radius: 8px;
+    font-family:Verdana, Geneva, Tahoma, sans-serifS
 }
 
-.submit{
+#selectorSubmit{
     border-radius: 8px;
-    background-color: tomato;
+    background-color: lime;
+    margin-bottom: 5px;
 }
 
 .char-card{
-    background-color: yellow;
-    width: 25%;
+    /* background-color: yellow; */
+    background-color: rgb(0, 140, 255);
+    /* width: 100%; */
     text-align: center;
     box-shadow: 5px 5px lime;
     border-radius: 5px;
     visibility: visible;
+    /* margin: auto; */
+    position: relative;
+    /* width: 25%; */
+    display: inline-grid;
+  margin: 1rem 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.location{
-    visibility: hidden;
+img{
+   margin: auto;
 }
 
 #char-container{
-    width: 100%;
+    width: 25%;
+    margin: 2rem;
+    text-align: center;
+    
 }
 
 .commentForm{
     border-radius: 8px;
+}
+
+.location{
+    visibility: hidden;
+    padding: 2px;
+}
+
+#char-container{
+    width: 100%;
+    float: right;
+}
+
+.commentForm{
+    border-radius: 8px;
+}
+
+footer{
+    color:white;
+    text-align: right;
+    font-size: smaller;
+    padding-right: 10px;
 }

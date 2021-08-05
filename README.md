@@ -1,1 +1,1 @@
-How to use the app
+Learn about your favorite Rick and Morty characters! You can filter by species, gender, and whether they are alive or dead. Once you select the filters you want, you can select the card you want to reveal where this character can be found in the Rick and Morty universe.
